@@ -12,10 +12,7 @@ public class NoopLicensingService : ILicensingService
         IWebHostEnvironment environment,
         GlobalSettings globalSettings)
     {
-        if (!environment.IsDevelopment() && globalSettings.SelfHosted)
-        {
-            throw new Exception($"{nameof(NoopLicensingService)} cannot be used for self hosted instances.");
-        }
+       
     }
 
     public Task ValidateOrganizationsAsync()
