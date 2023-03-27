@@ -1,4 +1,4 @@
-﻿using Bit.Core.Entities;
+using Bit.Core.Entities;
 using Bit.Core.Models.Business;
 using Bit.Core.Settings;
 using Microsoft.AspNetCore.Hosting;
@@ -14,7 +14,7 @@ public class NoopLicensingService : ILicensingService
     {
         if (!environment.IsDevelopment() && globalSettings.SelfHosted)
         {
-            throw new Exception($"{nameof(NoopLicensingService)} cannot be used for self hosted instances.");
+            var ex = new Exception($"{nameof(NoopLicensingService)} cannot be used for self hosted instances.");
         }
     }
 

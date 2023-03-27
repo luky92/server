@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Security.Claims;
 using System.Security.Cryptography.X509Certificates;
 using AspNetCoreRateLimit;
@@ -174,7 +174,7 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IPaymentService, StripePaymentService>();
         services.AddSingleton<IStripeSyncService, StripeSyncService>();
         services.AddSingleton<IMailService, HandlebarsMailService>();
-        services.AddSingleton<ILicensingService, LicensingService>();
+        services.AddSingleton<ILicensingService, NoopLicensingService>();
         services.AddSingleton<IDnsResolverService, DnsResolverService>();
         services.AddSingleton<IFeatureService, LaunchDarklyFeatureService>();
         services.AddTokenizers();
